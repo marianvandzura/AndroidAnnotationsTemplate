@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+//AndroidAnnotations
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//        jcenter()
+//    }
+//    dependencies {
+//        // replace with the current version of the Android plugin
+//        classpath 'com.android.tools.build:gradle:2.1.0-alpha1'
+//        // replace with the current version of the android-apt plugin
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+//    }
+//}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+apply plugin: 'com.android.application'
+
+//AndroidAnnotations
+//apply plugin: 'android-apt'
+//apt {
+//    arguments {
+//        androidManifestFile variant.outputs[0]?.processResources?.manifestFile
+//        //replace package name
+//        resourcePackageName "marian.vandzura.com.androidanotationstemplateproject"
+//    }
+//}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "marian.vandzura.com.androidanotationstemplateproject"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def appcompatVersion = '23.2.0'
+def junitVersion = '4.12'
+//AndroidAnnotations
+//def androidAnnotationsVersion = '3.3.2'
+
+//Butter Knife
+//def butterKnifeVersion = '7.0.1'
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile "junit:junit:$junitVersion"
+    compile "com.android.support:appcompat-v7:$appcompatVersion"
+    //Android Annotations
+//    apt "org.androidannotations:androidannotations:$androidAnnotationsVersion"
+//    compile "org.androidannotations:androidannotations-api:$androidAnnotationsVersion"
+    //Butter Knife
+//    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+}
