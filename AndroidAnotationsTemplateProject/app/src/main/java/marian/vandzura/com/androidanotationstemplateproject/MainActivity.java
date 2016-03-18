@@ -14,15 +14,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView mHelloWorld;
-    Button mButton1;
-    Button mButton2;
-    Button mButton3;
-    CheckBox mCheckBox;
-    RadioButton mRadioButton;
-    EditText mEditText;
-    Switch mSwitch;
-    String mHelloWorldEveryone;
+    private TextView mHelloWorld;
+    private Button mButton1;
+    private Button mButton2;
+    private Button mButton3;
+    private CheckBox mCheckBox;
+    private RadioButton mRadioButton;
+    private EditText mEditText;
+    private Switch mSwitch;
+    private String mHelloWorldEveryone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
